@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
+use App\Application;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class ApplicationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-         return Blog::all();
+         return Application::all();
     }
 
     /**
@@ -25,7 +25,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

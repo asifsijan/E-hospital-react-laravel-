@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Doctor;
 use App\User;
 use App\Blog;
-use App\Application;
+
 //use Session;
 
 use Validator;
@@ -43,7 +43,7 @@ class DoctorController extends Controller
 		    else{
 
 			$user = new User();
-			$file1 = request('image');  
+			$file1 = request('image');
 			$filename1 = time().".".$file1->getClientOriginalExtension();
 			$file1->move('upload', $filename1);
 
@@ -64,7 +64,7 @@ class DoctorController extends Controller
 			$adpm_id = User::latest()->first()->id;
 
 			$doctor = new Doctor();
-			$file = request('certificate');  
+			$file = request('certificate');
 			$filename = time().".".$file->getClientOriginalExtension();
 			$file->move('upload', $filename);
 
@@ -117,7 +117,7 @@ class DoctorController extends Controller
 		}elseif(count($user) > 0 ){
 
 			$req->session()->put('name', $req->name);
-			$req->session()->save(); 
+			$req->session()->save();
 			return redirect('/doctor/home');
 		}else{
 
@@ -132,7 +132,7 @@ class DoctorController extends Controller
 	public function home(Request $req){
 		if($req->session()->has('name')){
 			// $blog = \App\Blog::all();
-			
+
 			// return view('doctor.home');
 		$blogs = Blog::orderBy('blog_id', 'desc')->paginate(5);
 
@@ -145,7 +145,7 @@ class DoctorController extends Controller
 			$req->session()->flash('msg', 'invalid request...login first!');
 			return redirect('/doctor/login');
 		}
-		
+
 	}
 
 
@@ -165,14 +165,14 @@ class DoctorController extends Controller
 			$req->session()->flash('msg', 'invalid request...login first!');
 			return redirect('/doctor/login');
 		}
-		
+
 	}
 
 	public function storeBlog(Request $req){
 
 
 
-	
+
 
 			$user = new Blog();
 
@@ -182,7 +182,7 @@ class DoctorController extends Controller
 
 			// $d_id = User::select('id')
    //                         ->where('user_name', '=', 'asifsijan')
-   //                         ->get(); 
+   //                         ->get();
 
 
 //			$name = Session::get('name');
@@ -204,7 +204,7 @@ class DoctorController extends Controller
 			return redirect('/doctor/home');
 
 
-		
+
 
 
 
@@ -221,7 +221,7 @@ class DoctorController extends Controller
 		//return view(doctor.blogShow)->with('blog', Blog::where('slug', $slug)->first());
 		$blog = Blog::find($blog_id);
 		return view('doctor.blogShow', ['blog' => $blog]);
-	} 
+	}
 
 	public function showApp(Request $req){
 
@@ -245,13 +245,12 @@ class DoctorController extends Controller
 
 
 	public function showSApp($app_id){
-		
+
 		$app = App::find($app_id);
 		return view('doctor.appSShow', ['app' => $app]);
-	} 
+	}
 
 
 
 
 	}
-

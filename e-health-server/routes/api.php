@@ -6,6 +6,7 @@ use App\Doctor;
 use App\User;
 use App\Blog;
 use App\Application;
+use App\Complaint;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,6 @@ use App\Application;
 |
 */
 Route::resource('blogs','BlogController');
+Route::resource('applications','ApplicationController');
+Route::resource('doctors','DoctorRegisterController');
+Route::resource('complaints','ComplaintController');

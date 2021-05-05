@@ -21,3 +21,4 @@ Route::resource('blogs','BlogController');
 Route::resource('applications','ApplicationController');
 Route::resource('doctors','DoctorRegisterController');
 Route::resource('complaints','ComplaintController');
+Route::resource('appointments','AppointmentController');

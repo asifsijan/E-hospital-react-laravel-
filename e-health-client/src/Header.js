@@ -12,7 +12,7 @@ import Request from './components/Request';
 import Complaint from './components/Complaint';
 
 import Register from './components/Register';
-
+import Appointment from './components/Appointment';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -80,42 +80,53 @@ export default function Header() {
 
 
       <div className="container">
-        
-      
 
 
-      <div class="col-3 ml-auto text-right py-4 mx-5">
-        <button class="button btn-outline-secondary"><a href="/home">Logout</a></button>  
-      </div>
-      <AppBar position="static" style={{ background: 'white' }}>
-        <Tabs
 
-          value={value}
-          onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          aria-label="nav tabs example"
-          centered
 
-          >
-          <LinkTab label="Home" href="" {...a11yProps(0)} />
-          <LinkTab label="Post Blog" href="" {...a11yProps(1)} />
-          <LinkTab label="Requests" href="" {...a11yProps(2)} />
-          <LinkTab label="Complain" href="" {...a11yProps(3)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        <Home />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <PostBlog />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <Request />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <Complaint />
-      </TabPanel>
+        <div class="col-3 ml-auto text-right py-4 mx-5">
+          <button class="button btn-outline-secondary"><a href="/home">Logout</a></button>  
+        </div>
+
+        <div class="d-flex justify-content-center pb-5">
+          <h1 class="font-weight-light display-3">E-Health</h1>  
+        </div>
+
+
+        <AppBar position="static" style={{ background: 'white' }}>
+          <Tabs
+
+            value={value}
+            onChange={handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+            aria-label="nav tabs example"
+            centered
+
+            >
+            <LinkTab label="Home" href="" {...a11yProps(0)} />
+            <LinkTab label="Post Blog" href="" {...a11yProps(1)} />
+            <LinkTab label="Requests" href="" {...a11yProps(2)} />
+            <LinkTab label="Appointments" href="" {...a11yProps(3)} />
+            <LinkTab label="Complain" href="" {...a11yProps(4)} />
+          </Tabs>
+        </AppBar>
+        <TabPanel value={value} index={0}>
+          <Home />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <PostBlog />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <Request />
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          <Appointment />
+        </TabPanel>
+
+        <TabPanel value={value} index={4}>
+          <Complaint />
+        </TabPanel>
       </div>
       </div>
       );

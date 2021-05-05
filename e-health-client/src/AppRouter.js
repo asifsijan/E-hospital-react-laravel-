@@ -16,19 +16,19 @@ function AppRouter() {
 	return (
 		<Router>
 			<div>
-				<nav>
-					<ul>
-						<li>
-							<Link to="/doctor/register">Register</Link>
-						</li>
-						<li>
-							<Link to="/doctor/login">Login</Link>
-						</li>
-						<li>
-							<Link to="/home">Home</Link>
-						</li>
-					</ul>
-				</nav>
+				{/* <nav> */}
+				{/* 	<ul> */}
+				{/* 		<li> */}
+				{/* 			<Link to="/doctor/register">Register</Link> */}
+				{/* 		</li> */}
+				{/* 		<li> */}
+				{/* 			<Link to="/doctor/login">Login</Link> */}
+				{/* 		</li> */}
+				{/* 		<li> */}
+				{/* 			<Link to="/home">Home</Link> */}
+				{/* 		</li> */}
+				{/* 	</ul> */}
+				{/* </nav> */}
 				<Route path="/doctor/register" exact component={Register} />
 				<Route path="/doctor/login" exact component={Login} />
 				<Context.Provider value={value}>
